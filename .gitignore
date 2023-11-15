@@ -1,0 +1,5 @@
+**/model_repo
+/model_repo
+.env
+.test-env
+/.vscode
