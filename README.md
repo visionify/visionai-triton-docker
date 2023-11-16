@@ -34,7 +34,7 @@ Run the following commands to download models from the provided JSON URL and unz
 3. update .env file variables:
    
   ```bash 
-  MODEL_REPO=/path/to/your/model/repo
+   MODEL_REPO=/path/to/your/model/repo
   ```
 4. Build and run the Docker container:
 
@@ -53,8 +53,8 @@ Run the following commands to download models from the provided JSON URL and unz
 
 ## Configuration
 
-- **Image**: `nvcr.io/nvidia/tritonserver:23.10-py3`
-- **Ports**:
+  - **Image**: `nvcr.io/nvidia/tritonserver:23.10-py3`
+  - **Ports**:
   - 8000:8000 (HTTP endpoint)
   - 8001:8001 (gRPC endpoint)
   - 8002:8002 (Metrics endpoint)
