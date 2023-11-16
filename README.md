@@ -11,10 +11,10 @@ This Docker Compose configuration sets up the VisionAI Triton inference server u
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/visionify/visionai-triton-docker.git
-   cd visionai-triton-docker
-   ```
+    ```bash
+    git clone https://github.com/visionify/visionai-triton-docker.git
+    cd visionai-triton-docker
+    ```
 
 2. Download and prepare models:
 
@@ -33,23 +33,23 @@ Run the following commands to download models from the provided JSON URL and unz
 
 3. update .env file variables:
    
-  ```bash 
-   MODEL_REPO=/path/to/your/model/repo
-  ```
+    ```bash 
+     MODEL_REPO=/path/to/your/model/repo
+    ```
 4. Build and run the Docker container:
 
-   ```bash
-   docker-compose --env-file .env up -d
-   ```
+    ```bash
+    docker-compose --env-file .env up -d
+    ```
 
-   This will start the Triton Inference Server with the specified configurations.
+    This will start the Triton Inference Server with the specified configurations.
 
 5. Access the Triton Inference Server:
 
-   The server will be available at:
-   - HTTP_SERVER: http://localhost:8000
-   - gRPC_SERVER: http://localhost:8001
-   - Metrics: http://localhost:8002
+    The server will be available at:
+    - HTTP_SERVER: http://localhost:8000
+    - gRPC_SERVER: http://localhost:8001
+    - Metrics: http://localhost:8002
 
 ## Configuration
 
