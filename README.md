@@ -16,12 +16,27 @@ This Docker Compose configuration sets up the VisionAI Triton inference server u
    cd visionai-triton-docker
    ```
 
-2. update .env file variables:
+2. Download and prepare models:
+
+Run the following commands to download models from the provided JSON URL and unzip them into the specified model repository:
+
+    JSON_URL="https://docsvisionify.blob.core.windows.net/docs-images/scenarios.json"
+    MODEL_REPO="/path/to/your/model/repo"
+
+    mkdir -p $MODEL_REPO
+
+# Download and unzip models
+    curl -L $JSON_URL | jq -r '.models[]' | xargs -I {} curl -L {} -O -s && unzip -o "*.zip" -d $MODEL_REPO && rm *.zip
+
+  Replace /path/to/your/model/repo with the actual path to your model repository.
+
+
+3. update .env file variables:
    
   ```bash 
   MODEL_REPO=/path/to/your/model/repo
   ```
-3. Build and run the Docker container:
+4. Build and run the Docker container:
 
    ```bash
    docker-compose --env-file .env up -d
@@ -29,7 +44,7 @@ This Docker Compose configuration sets up the VisionAI Triton inference server u
 
    This will start the Triton Inference Server with the specified configurations.
 
-4. Access the Triton Inference Server:
+5. Access the Triton Inference Server:
 
    The server will be available at:
    - HTTP_SERVER: http://localhost:8000
